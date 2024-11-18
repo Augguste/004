@@ -1,0 +1,141 @@
+h2 a {
+color: darkred;
+text-decoration: none;
+padding: 0 200px;
+background-color: lightgoldenrodyellow;
+transition: all 0.5s;
+/* max 0.4 nes atrodys kad stringa */
+}
+
+h2 a:hover {
+    color: seagreen;
+    background-color: white;
+}
+
+ul li:nth-child(3) a {
+    color: brown;
+    /* ul'e esantis 3 vaikas, jo a elemnetas */
+
+}
+
+ul li  {
+    border-bottom: 1px solid black;
+    text-decoration: none;
+}
+
+ul li:last-child {
+    border-bottom: none;
+}
+
+.ps {
+    background-color: palevioletred;
+    color: aquamarine;
+    width: 300px;
+    padding: 10px;
+}
+
+.ps:before {
+    content: 'UP';
+    /* visi apacioj be contento negali but, visi isnyktu, tarp tu kabuciu gali buti tuscia*/
+    color: white;
+    background-color: black;
+    padding: 5px;
+    margin-bottom: block;
+    display: block;
+}
+
+.ps:after {
+    /* sito texto negalima pasizymet */
+    /* naudojamas, dazniausiai buna tuscias */
+    content: 'DW';
+    color: white;
+    background-color: black;
+    padding: 5px;
+    margin-bottom: block;
+    display: block;
+}
+
+
+.sq {
+    /* skaiciuoja atskaitos taskas nuo artimiausio tevo, kuris ne statinej pozicijoj, pvz: relative. jeigu tevo nera, varo iki html tago*/
+    position: relative;
+    margin-top: 50px;
+    border: 1px solid darkorchid;
+    padding: 10px;
+    /* kas yra viduj kad neprisiplotu prie jo */
+}
+
+.sq .mini{
+    position: relative;
+    background-color: #add8e677;
+    /* top ir left yra pradzia transition */
+    top : 0;
+    left: 0;
+    width: 200px;
+    height: 50px;
+    margin: 5px 0;
+    /* vaziuoja letai pradzioj veliau greiteja ease-in. jei ease-out suleteja gale */
+    transition: all 1s cubic-bezier(.77,-0.58,.58,1.59);
+    /* jeigu dedadam transition ir jis neveikia,nes jam visad reik pradzios ir pabaigos. */
+    z-index: 50;
+}
+.sq .mini:nth-child(2) {
+    position: absolute;
+    background-color: lightpink;
+    z-index: 51;
+    
+  
+}
+
+.sq:hover .mini:nth-child(2) {
+   
+    /* pajudes nuo virsaus i apacia (top) */
+    /* jei nuo top -10, pavaziuos i virsu */
+    top: 60px;
+    left: 0px;
+/* cia yra transition pabaiga */
+
+}
+
+.fix { 
+    /* kad butu prilipes prie virsaus top */
+    /* naudojam memu, reklamom, arba rodyklem kad grizt i virsu puslapio */
+    position: fixed;
+    bottom: 50px;
+    right: 50px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: lightblue;
+}
+
+.hamburger {
+    /* display none neatvaizduojama pozicija */
+    position: relative;
+    /* tevas relativus. pseudo klases apskaiciuoja ir pajuda i viena ar kita puse */
+    width: 50px;
+    height: 5px;
+    background-color: black;
+
+}
+
+.hamburger:before {
+    /* kabutes turi but kabutes tuscios */
+content: '';
+position: absolute;
+width: 50px;
+height: 5px;
+background-color: black;
+top: 10px;
+} 
+/* before/after neturi hover'io */
+.hamburger:after {
+ content: '';
+position: absolute;
+ width: 50px;
+height: 5px;
+background-color: black;
+top: 20px;
+} 
+
+
